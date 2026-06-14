@@ -1,0 +1,6 @@
+{
+  "name": "Neon Keno",
+  "description": "An electrifying, interactive Keno mobile game featuring a dynamic 80-number grid, neon-glowing animations, adjustable betting controls, multi-draw matches, and historical stats and paytables.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

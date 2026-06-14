@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Space Grotesk", "JetBrains Mono", monospace;
+
+  /* Custom Neon Theme Colors */
+  --color-brand-bg: #0b1326;
+  --color-brand-surface: #131b2e;
+  --color-brand-surface-light: #222a3d;
+  --color-brand-surface-bright: #31394d;
+  --color-brand-surface-lowest: #060e20;
+  
+  --color-brand-primary: #8ed5ff;
+  --color-brand-secondary: #ddb7ff;
+  --color-brand-tertiary: #ffc42f;
+  
+  --color-brand-cyan: #38bdf8;
+  --color-brand-emerald: #10b981;
+}
+
+/* Custom styles for Keno Game */
+body {
+  overscroll-behavior-y: none;
+  background-color: #0b1326;
+  color: #dae2fd;
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .neon-text-glow {
+    text-shadow: 0 0 8px rgba(142, 213, 255, 0.6);
+  }
+  
+  .neon-text-glow-gold {
+    text-shadow: 0 0 10px rgba(255, 196, 47, 0.7);
+  }
+
+  .neon-text-glow-success {
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  }
+
+  .neon-border-glow {
+    box-shadow: 0 0 15px rgba(142, 213, 255, 0.3);
+  }
+  
+  .neon-border-glow-success {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  }
+
+  .glass-panel {
+    background: rgba(11, 19, 38, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Scrollbar hide helpers */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Animations */
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.draw-ring {
+  animation: ringPulse 0.5s ease-out forwards;
+}
+
+@keyframes boardTilePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tile-pulse {
+  animation: boardTilePulse 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
