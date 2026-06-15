@@ -24,7 +24,6 @@ import TopBar from './components/TopBar';
 import GameBoard from './components/GameBoard';
 import PaytableTab from './components/PaytableTab';
 import HistoryTab from './components/HistoryTab';
-import LoginScreen from './components/LoginScreen';
 
 import { KenoRound, KenoStats, User } from './types';
 import { playClick, playDraw, playWinResult, setMutedState, getMutedState } from './utils/audio';
@@ -413,8 +412,6 @@ export default function App() {
   return (
     <div className="bg-[#0b1326] min-h-screen text-[#dae2fd] font-sans flex flex-col md:flex-row overflow-hidden select-none">
       
-      {!user && <LoginScreen onLogin={handleLogin} />}
-
       {/* Top Header */}
       <TopBar 
         balance={balance}
